@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Pnotes- Home{% endblock %}
+
+{% block home %} active {% endblock %}
+{% block body %}
+  <div class="container my-3">
+      <form  method="POST" action="/notes">
+                                        {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Enter the Title Of Notes</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title " name="title">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Enter your Notes </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="desc"></textarea>
+      </div>
+      <button type="submit" class="btn btn-danger">Add Note </button>
+      </form>
+
+    </div>
+
+{% endblock %}

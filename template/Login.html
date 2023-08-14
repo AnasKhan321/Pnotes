@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Pnotes- Login {% endblock %}
+{% block body %}
+
+  <div class="container my-3">
+      <form method="POST" action="/login">
+          {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Enter Your Username</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Username  " name="loginusername">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Enter your Password </label>
+            <input type="password" class="form-control" id="exampleFormControlTextarea1" placeholder=" " name="loginpass">
+
+      </div>
+              <p>Didn't Have Account <a href="signup" class="text-primary">Create a Account </a></p>
+      <button type="submit" class="btn btn-danger">Login  </button>
+      </form>
+
+    </div>
+
+
+{% endblock %}

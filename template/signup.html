@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Pnotes- SignUp  {% endblock %}
+
+{% block body %}
+
+  <div class="container my-3">
+      <form  method="POST" action="/signup">
+                              {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="username" class="form-label">Enter Your Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter Your Username  " name="username">
+      </div>
+            <div class="mb-3">
+        <label for="fname" class="form-label">Enter Your First Name</label>
+        <input type="text" class="form-control" id="fname" placeholder="Enter Your First Name  " name="fname">
+      </div>
+            <div class="mb-3">
+        <label for="lname" class="form-label">Enter Your last Name</label>
+        <input type="text" class="form-control" id="lname" placeholder="Enter Your last Name  " name="lname">
+      </div>
+            <div class="mb-3">
+        <label for="email" class="form-label">Enter Your Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@exaple.com " name="email">
+      </div>
+            <div class="mb-3">
+        <label for="pass1" class="form-label">Enter Your PassWord</label>
+        <input type="password" class="form-control" id="pass1" placeholder="Enter Your Password  " name="pass1">
+      </div>
+            <div class="mb-3">
+        <label for="pass2" class="form-label">Confirm Your Password</label>
+        <input type="password" class="form-control" id="pass2" placeholder="Confirm Password  " name="pass2">
+      </div>
+
+
+      <button type="submit" class="btn btn-danger">Create Account   </button>
+
+      </form>
+
+    </div>
+{% endblock %}

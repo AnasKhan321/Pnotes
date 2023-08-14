@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Pnotes- MyNotes {% endblock %}
+
+{% block note %} active {% endblock %}
+{% block body %}
+<h4 class="text-center">{{Message}}</h4>
+<div class="container my-3">
+  <div class="row">
+
+{% for note in Notes %}
+
+<div class="card col-sm mx-2 my-2"  style="width: 18rem;">
+  <div class="card-body">
+    <form method="POST" action="/update/{{note.id}}">
+                {% csrf_token %}
+
+    <h5 contenteditable="true" class="card-title" ><input value="{{note.Note_title}}" style="border : 2px solid white " name="head"></h5>
+      <p class="card-text" contenteditable="true">  <textarea  name="head_t" style="border : 2px solid white " rows="10" cols="50"> {{note.Note_Description}} </textarea> </p>
+         <button class="btn btn-danger inline" type="submit"  >Update Note </button>
+        <a href="/delete/{{note.id}}" class="btn btn-danger inline">Delete Note </a>
+      </form>
+
+  </div>
+</div>
+{% if forloop.counter|divisibleby:3 %}
+  </div> <div class="row">
+      {% endif %}
+
+{% endfor %}
+ </div>
+  </div>
+{% endblock %}
